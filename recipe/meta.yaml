@@ -1,7 +1,7 @@
 {% set name = "bipedal-locomotion-framework" %}
 {% set namecxx = "libbipedal-locomotion-framework" %}
 {% set namepython = "bipedal-locomotion-framework-python" %}
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b297b4e83e5008cf3461eecd1ecc306fc789867c18c1bfb3ed4568140f0956bb
+  sha256: 28287535172fd25289df80a2f806fbfd92c021dec2750d7613e3343481a7c21c
   patches:
     - 563.patch
     - 564.patch
@@ -141,10 +141,10 @@ about:
   license: BSD-3-Clause
   license_file:
     - LICENSE
-  summary:  Suite of libraries for achieving bipedal locomotion on humanoid robots.
+  summary: Suite of libraries for achieving bipedal locomotion on humanoid robots.
 
 
 extra:
   recipe-maintainers:
     - traversaro
-    - GiulioRomualdi 
+    - GiulioRomualdi
