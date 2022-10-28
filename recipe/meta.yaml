@@ -15,7 +15,7 @@ source:
     - 564.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ namecxx }}
@@ -55,6 +55,7 @@ outputs:
         - casadi
         - qhull
         - libopencv
+        - pcl
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
