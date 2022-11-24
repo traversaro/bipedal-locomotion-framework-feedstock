@@ -1,0 +1,25 @@
+From 53635d552ea250d22dc71a18fb776ee977153fe7 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio.traversaro@iit.it>
+Date: Thu, 24 Nov 2022 13:06:03 +0100
+Subject: [PATCH] AddBipedalLocomotionYARPDevice: Enable YARP devices by
+ deafult
+
+---
+ cmake/AddBipedalLocomotionYARPDevice.cmake | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/cmake/AddBipedalLocomotionYARPDevice.cmake b/cmake/AddBipedalLocomotionYARPDevice.cmake
+index c88b7a80a..3d2068af6 100644
+--- a/cmake/AddBipedalLocomotionYARPDevice.cmake
++++ b/cmake/AddBipedalLocomotionYARPDevice.cmake
+@@ -41,7 +41,9 @@ function(add_bipedal_yarp_device)
+ 
+   yarp_prepare_plugin(${name} CATEGORY device
+                               TYPE ${type}
+-                              INCLUDE ${public_headers})
++                              INCLUDE ${public_headers}
++                              OPTION ENABLE_${name}
++                              DEFAULT ON)
+ 
+   if(NOT SKIP_${name})
+ 
