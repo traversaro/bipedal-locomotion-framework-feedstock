@@ -12,9 +12,10 @@ source:
   sha256: 28287535172fd25289df80a2f806fbfd92c021dec2750d7613e3343481a7c21c
   patches:
     - 564.patch
+    - 576.patch
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: {{ namecxx }}
