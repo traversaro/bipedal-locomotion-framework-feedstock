@@ -14,7 +14,7 @@ source:
     - 564.patch
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: {{ namecxx }}
@@ -102,8 +102,6 @@ outputs:
         - pip
         - pybind11
         - pybind11-abi
-        # Workaround for https://github.com/conda-forge/staged-recipes/pull/20432#issuecomment-1274243030
-        - openssl=1.1.1
         - liblie-group-controllers
         - yarp-cxx
         - idyntree
