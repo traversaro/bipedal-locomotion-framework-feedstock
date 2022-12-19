@@ -113,6 +113,7 @@ outputs:
         - python
         - numpy
         - manifpy
+        - idyntree
     test:
       commands:
         - test $(pip list | grep bipedal_locomotion_framework | tr -s " " | grep $PKG_VERSION | wc -l) -eq 1  # [unix]
