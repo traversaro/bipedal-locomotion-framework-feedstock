@@ -54,11 +54,17 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        - pcl
+        - pcl>1.11
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
         - xorg-libxfixes  # [linux]
+        - python
+        - pip
+        - pybind11
+        - pybind11-abi
+        - liblie-group-controllers
+        - spdlog
       run:
         # manif and eigen are mentioned in the headers so needed when building
         # against libbipedal-locomotion-framework
