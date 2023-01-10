@@ -14,7 +14,7 @@ source:
     - 564.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ namecxx }}
@@ -44,6 +44,7 @@ outputs:
         - idyntree
         - manif
         - yarp-cxx
+        - tomlplusplus
         - librobometry
         - fmt
         - spdlog
@@ -110,6 +111,7 @@ outputs:
         - pybind11-abi
         - liblie-group-controllers
         - yarp-cxx
+        - tomlplusplus
         - idyntree
         - fmt
         - spdlog
