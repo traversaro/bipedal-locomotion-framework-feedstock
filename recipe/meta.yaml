@@ -12,9 +12,10 @@ source:
   sha256: 151df5c744c6ead114d35512c4377b98e21795fbac0856f7290f51cb1765fe14
   patches:
     - 564.patch
+    - 581.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ namecxx }}
@@ -44,6 +45,7 @@ outputs:
         - idyntree
         - manif
         - yarp-cxx
+        - tomlplusplus
         - librobometry
         - fmt
         - spdlog
@@ -110,6 +112,7 @@ outputs:
         - pybind11-abi
         - liblie-group-controllers
         - yarp-cxx
+        - tomlplusplus
         - idyntree
         - fmt
         - spdlog

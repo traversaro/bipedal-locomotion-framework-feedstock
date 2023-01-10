@@ -23,6 +23,7 @@ cmake ${CMAKE_ARGS} -GNinja .. \
     -DFRAMEWORK_USE_casadi:BOOL=ON \
     -DFRAMEWORK_USE_LieGroupControllers:BOOL=ON \
     -DFRAMEWORK_USE_UnicyclePlanner:BOOL=ON \
+    -DFRAMEWORK_USE_tomlplusplus:BOOL=ON \
     -DFRAMEWORK_COMPILE_PYTHON_BINDINGS:BOOL=OFF
 
 cat CMakeCache.txt
