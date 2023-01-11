@@ -56,7 +56,7 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        - pcl
+        - pcl >1.11
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
