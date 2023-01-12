@@ -117,6 +117,9 @@ outputs:
         - fmt
         - spdlog
         - xorg-libxfixes  # [linux]
+        - icub-models # Requested just for tests
+        - scipy # Requested just for tests
+        - pytest # Requested just for tests
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
