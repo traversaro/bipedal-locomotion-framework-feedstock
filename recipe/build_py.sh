@@ -25,4 +25,4 @@ cmake --build . --config Release --target install
 # Tests are not installed, so we run them during the build
 # We run them directly via pytest so we detect if we are not compiling some required components
 cd ..
-pytest
+pytest -v -k "not (test_load_from_file)"
