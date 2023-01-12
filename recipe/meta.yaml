@@ -120,6 +120,7 @@ outputs:
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
         - pytest # Requested just for tests
+        - manifpy # Requested just for tests
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
