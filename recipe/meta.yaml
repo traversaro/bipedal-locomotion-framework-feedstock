@@ -80,6 +80,10 @@ outputs:
   - name: {{ namepython }}
     script: build_py.sh  # [unix]
     script: bld_py.bat  # [win]
+    build:
+      # icub-models is used just for tests, we do not actually link the C++ library
+      ignore_run_exports:
+        - icub-models
     requirements:
       build:
         - {{ compiler('c') }}
@@ -111,6 +115,10 @@ outputs:
         - fmt
         - spdlog
         - xorg-libxfixes  # [linux]
+        - icub-models # Requested just for tests
+        - scipy # Requested just for tests
+        - pytest # Requested just for tests
+        - manifpy # Requested just for tests
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
