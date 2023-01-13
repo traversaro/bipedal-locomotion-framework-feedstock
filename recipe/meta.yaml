@@ -24,6 +24,9 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage(namecxx, max_pin='x.x.x') }}
+      # Workaround for the problems in https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/10
+      ignore_run_exports:
+        - python
     requirements:
       build:
         - {{ compiler('c') }}
