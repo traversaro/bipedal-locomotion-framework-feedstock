@@ -13,9 +13,10 @@ source:
   patches:
     - 564.patch
     - 581.patch
+    - 589.patch
 
 build:
-  number: 3
+  number: 4
 
 outputs:
   - name: {{ namecxx }}
