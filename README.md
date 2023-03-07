@@ -1,11 +1,11 @@
-About bipedal-locomotion-framework
-==================================
+About bipedal-locomotion-framework-feedstock
+============================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ami-iit/bipedal-locomotion-framework
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/blob/main/LICENSE.txt)
 
 Summary: Suite of libraries for achieving bipedal locomotion on humanoid robots.
 
