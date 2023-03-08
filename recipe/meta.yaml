@@ -14,7 +14,7 @@ source:
     - 564.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ namecxx }}
@@ -66,6 +66,8 @@ outputs:
         # against libbipedal-locomotion-framework
         - manif
         - eigen
+        - liblie-group-controllers
+        - tomlplusplus
 
     test:
       commands:
