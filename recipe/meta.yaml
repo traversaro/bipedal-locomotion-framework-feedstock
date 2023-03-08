@@ -1,7 +1,7 @@
 {% set name = "bipedal-locomotion-framework" %}
 {% set namecxx = "libbipedal-locomotion-framework" %}
 {% set namepython = "bipedal-locomotion-framework-python" %}
-{% set version = "0.11.1" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name }}
@@ -9,14 +9,12 @@ package:
 
 source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 151df5c744c6ead114d35512c4377b98e21795fbac0856f7290f51cb1765fe14
+  sha256: 52b5c9777cd8cb8637e57287511afa43bc308921ce1ff249c34593345674cd36
   patches:
     - 564.patch
-    - 581.patch
-    - 589.patch
 
 build:
-  number: 4
+  number: 0
 
 outputs:
   - name: {{ namecxx }}
@@ -57,7 +55,8 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        - pcl >1.12
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/21#issuecomment-1460345952
+        # - pcl >1.12
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
