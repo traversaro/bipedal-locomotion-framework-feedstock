@@ -55,7 +55,8 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        - pcl >1.12
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/21#issuecomment-1460345952
+        # - pcl >1.12
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
