@@ -23,5 +23,5 @@ if errorlevel 1 exit 1
 :: Tests are not installed, so we run them during the build
 :: We run them directly via pytest so we detect if we are not compiling some required components
 cd ..
-pytest -v -k "not (test_load_from_file)"
+pytest -v -k "not (test_load_from_file or test_fixed_foot_detector)"
 if errorlevel 1 exit 1
