@@ -16,6 +16,8 @@ fmt:
 - '9'
 libopencv:
 - 4.7.0
+libosqp:
+- 0.6.3
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:

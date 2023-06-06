@@ -10,6 +10,8 @@ fmt:
 - '9'
 libopencv:
 - 4.7.0
+libosqp:
+- 0.6.3
 pin_run_as_build:
   python:
     min_pin: x.x
