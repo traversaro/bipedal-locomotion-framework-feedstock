@@ -1,4 +1,4 @@
-From 5a654ac9eac2e18474c9204d26b85d19352b5ef1 Mon Sep 17 00:00:00 2001
+From b86d1473406267324c5e72ef106444b88ae4e6e0 Mon Sep 17 00:00:00 2001
 From: Silvio Traversaro <silvio@traversaro.it>
 Date: Tue, 4 Jul 2023 17:38:13 +0200
 Subject: [PATCH] Fix standalone Python bindings workflow
@@ -17,7 +17,8 @@ Subject: [PATCH] Fix standalone Python bindings workflow
  bindings/python/System/CMakeLists.txt                    | 6 +++---
  bindings/python/TSID/CMakeLists.txt                      | 2 +-
  bindings/python/TextLogging/CMakeLists.txt               | 4 ++--
- 13 files changed, 18 insertions(+), 18 deletions(-)
+ bindings/python/YarpUtilities/CMakeLists.txt             | 2 +-
+ 14 files changed, 19 insertions(+), 19 deletions(-)
 
 diff --git a/bindings/python/Contacts/CMakeLists.txt b/bindings/python/Contacts/CMakeLists.txt
 index 48b402c24c..d84fd38c6f 100644
@@ -233,3 +234,16 @@ index 3ff5d142c4..a9bc458426 100644
  
    add_bipedal_locomotion_python_module(
      NAME  TextLoggingYarpImplementation
+diff --git a/bindings/python/YarpUtilities/CMakeLists.txt b/bindings/python/YarpUtilities/CMakeLists.txt
+index 7e8416398c..7e38a1d639 100644
+--- a/bindings/python/YarpUtilities/CMakeLists.txt
++++ b/bindings/python/YarpUtilities/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_YarpUtilities)
++if(TARGET BipedalLocomotion::YarpUtilities)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/YarpUtilities)
+ 
