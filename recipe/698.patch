@@ -1,0 +1,235 @@
+From 5a654ac9eac2e18474c9204d26b85d19352b5ef1 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Tue, 4 Jul 2023 17:38:13 +0200
+Subject: [PATCH] Fix standalone Python bindings workflow
+
+---
+ bindings/python/Contacts/CMakeLists.txt                  | 2 +-
+ bindings/python/ContinuousDynamicalSystem/CMakeLists.txt | 2 +-
+ bindings/python/Conversions/CMakeLists.txt               | 2 +-
+ bindings/python/FloatingBaseEstimators/CMakeLists.txt    | 2 +-
+ bindings/python/IK/CMakeLists.txt                        | 2 +-
+ bindings/python/ML/CMakeLists.txt                        | 2 +-
+ bindings/python/ParametersHandler/CMakeLists.txt         | 4 ++--
+ bindings/python/Planners/CMakeLists.txt                  | 4 ++--
+ bindings/python/ReducedModelControllers/CMakeLists.txt   | 2 +-
+ bindings/python/RobotInterface/CMakeLists.txt            | 2 +-
+ bindings/python/System/CMakeLists.txt                    | 6 +++---
+ bindings/python/TSID/CMakeLists.txt                      | 2 +-
+ bindings/python/TextLogging/CMakeLists.txt               | 4 ++--
+ 13 files changed, 18 insertions(+), 18 deletions(-)
+
+diff --git a/bindings/python/Contacts/CMakeLists.txt b/bindings/python/Contacts/CMakeLists.txt
+index 48b402c24c..d84fd38c6f 100644
+--- a/bindings/python/Contacts/CMakeLists.txt
++++ b/bindings/python/Contacts/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_Contact)
++if(TARGET BipedalLocomotion::Contacts AND TARGET BipedalLocomotion::ContactDetectors)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/Contacts)
+ 
+diff --git a/bindings/python/ContinuousDynamicalSystem/CMakeLists.txt b/bindings/python/ContinuousDynamicalSystem/CMakeLists.txt
+index 09a81c3a74..3da4428b9d 100644
+--- a/bindings/python/ContinuousDynamicalSystem/CMakeLists.txt
++++ b/bindings/python/ContinuousDynamicalSystem/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ # Copyright (C) 2022 Istituto Italiano di Tecnologia (IIT). All rights reserved.
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+-if(FRAMEWORK_COMPILE_ContinuousDynamicalSystem)
++if(TARGET BipedalLocomotion::ContinuousDynamicalSystem)
+   set(H_PREFIX include/BipedalLocomotion/bindings/ContinuousDynamicalSystem)
+ 
+   add_bipedal_locomotion_python_module(
+diff --git a/bindings/python/Conversions/CMakeLists.txt b/bindings/python/Conversions/CMakeLists.txt
+index 7f9f0a8642..325f975ab5 100644
+--- a/bindings/python/Conversions/CMakeLists.txt
++++ b/bindings/python/Conversions/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_ManifConversions)
++if(TARGET BipedalLocomotion::ManifConversions)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/Conversions)
+ 
+diff --git a/bindings/python/FloatingBaseEstimators/CMakeLists.txt b/bindings/python/FloatingBaseEstimators/CMakeLists.txt
+index 78cda965aa..38960969c4 100644
+--- a/bindings/python/FloatingBaseEstimators/CMakeLists.txt
++++ b/bindings/python/FloatingBaseEstimators/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_FloatingBaseEstimators)
++if(TARGET BipedalLocomotion::FloatingBaseEstimators)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/FloatingBaseEstimators)
+ 
+diff --git a/bindings/python/IK/CMakeLists.txt b/bindings/python/IK/CMakeLists.txt
+index c54f000d57..9a468ef12e 100644
+--- a/bindings/python/IK/CMakeLists.txt
++++ b/bindings/python/IK/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_IK)
++if(TARGET BipedalLocomotion::IK)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/IK)
+ 
+diff --git a/bindings/python/ML/CMakeLists.txt b/bindings/python/ML/CMakeLists.txt
+index 497ba2988d..75dd856686 100644
+--- a/bindings/python/ML/CMakeLists.txt
++++ b/bindings/python/ML/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_ML)
++if(TARGET BipedalLocomotion::ML)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/ML)
+ 
+diff --git a/bindings/python/ParametersHandler/CMakeLists.txt b/bindings/python/ParametersHandler/CMakeLists.txt
+index b47a4d4d4c..2a953cc68a 100644
+--- a/bindings/python/ParametersHandler/CMakeLists.txt
++++ b/bindings/python/ParametersHandler/CMakeLists.txt
+@@ -13,7 +13,7 @@ add_bipedal_locomotion_python_module(
+   )
+ 
+ 
+-if(FRAMEWORK_COMPILE_YarpImplementation)
++if(TARGET BipedalLocomotion::ParametersHandlerYarpImplementation)
+ 
+   add_bipedal_locomotion_python_module(
+     NAME  ParametersHandlerYarpImplementationBindings
+@@ -29,7 +29,7 @@ if(FRAMEWORK_COMPILE_YarpImplementation)
+ endif()
+ 
+ 
+-if(FRAMEWORK_COMPILE_TomlImplementation)
++if(TARGET BipedalLocomotion::ParametersHandlerTomlImplementation)
+ 
+   add_bipedal_locomotion_python_module(
+     NAME  ParametersHandlerTomlImplementationBindings
+diff --git a/bindings/python/Planners/CMakeLists.txt b/bindings/python/Planners/CMakeLists.txt
+index 80debb95c7..8de48e3b1e 100644
+--- a/bindings/python/Planners/CMakeLists.txt
++++ b/bindings/python/Planners/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_Planners)
++if(TARGET BipedalLocomotion::Planners)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/Planners)
+ 
+@@ -32,7 +32,7 @@ if(FRAMEWORK_COMPILE_Planners)
+ 
+ endif()
+ 
+-if(FRAMEWORK_COMPILE_Unicycle)
++if(TARGET BipedalLocomotion::Unicycle)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/Planners)
+ 
+diff --git a/bindings/python/ReducedModelControllers/CMakeLists.txt b/bindings/python/ReducedModelControllers/CMakeLists.txt
+index 90176b15f4..e2875a79e9 100644
+--- a/bindings/python/ReducedModelControllers/CMakeLists.txt
++++ b/bindings/python/ReducedModelControllers/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_ReducedModelControllers)
++if(TARGET BipedalLocomotion::ReducedModelControllers)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/ReducedModelControllers)
+ 
+diff --git a/bindings/python/RobotInterface/CMakeLists.txt b/bindings/python/RobotInterface/CMakeLists.txt
+index a1e2a54838..22731f13db 100644
+--- a/bindings/python/RobotInterface/CMakeLists.txt
++++ b/bindings/python/RobotInterface/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_RobotInterface AND FRAMEWORK_COMPILE_YarpImplementation)
++if(TARGET BipedalLocomotion::RobotInterface AND TARGET BipedalLocomotion::RobotInterfaceYarpImplementation)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/RobotInterface)
+ 
+diff --git a/bindings/python/System/CMakeLists.txt b/bindings/python/System/CMakeLists.txt
+index 772615aa14..f5984b966c 100644
+--- a/bindings/python/System/CMakeLists.txt
++++ b/bindings/python/System/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_System)
++if(TARGET BipedalLocomotion::System)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/System)
+ 
+@@ -14,7 +14,7 @@ if(FRAMEWORK_COMPILE_System)
+     TESTS tests/test_variables_handler.py
+     )
+ 
+-  if(FRAMEWORK_COMPILE_YarpImplementation)
++  if(TARGET BipedalLocomotion::SystemYarpImplementation)
+ 
+     add_bipedal_locomotion_python_module(
+       NAME  SystemYarpImplementationBindings
+@@ -25,7 +25,7 @@ if(FRAMEWORK_COMPILE_System)
+ 
+   endif()
+ 
+-  if(FRAMEWORK_COMPILE_RosImplementation)
++  if(TARGET BipedalLocomotion::SystemRosImplementation)
+ 
+     add_bipedal_locomotion_python_module(
+       NAME  SystemRosImplementationBindings
+diff --git a/bindings/python/TSID/CMakeLists.txt b/bindings/python/TSID/CMakeLists.txt
+index c911567789..4751222f25 100644
+--- a/bindings/python/TSID/CMakeLists.txt
++++ b/bindings/python/TSID/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ # This software may be modified and distributed under the terms of the
+ # BSD-3-Clause license.
+ 
+-if(FRAMEWORK_COMPILE_TSID)
++if(TARGET BipedalLocomotion::TSID)
+ 
+   set(H_PREFIX include/BipedalLocomotion/bindings/TSID)
+ 
+diff --git a/bindings/python/TextLogging/CMakeLists.txt b/bindings/python/TextLogging/CMakeLists.txt
+index 3ff5d142c4..a9bc458426 100644
+--- a/bindings/python/TextLogging/CMakeLists.txt
++++ b/bindings/python/TextLogging/CMakeLists.txt
+@@ -16,7 +16,7 @@ add_bipedal_locomotion_python_module(
+   BipedalLocomotion::TextLogging
+   )
+ 
+-if(FRAMEWORK_COMPILE_RosImplementation)
++if(TARGET BipedalLocomotion::TextLoggingRosImplementation)
+ 
+   add_bipedal_locomotion_python_module(
+     NAME  TextLoggingRosImplementation
+@@ -27,7 +27,7 @@ if(FRAMEWORK_COMPILE_RosImplementation)
+ endif()
+ 
+ 
+-if(FRAMEWORK_COMPILE_YarpImplementation)
++if(TARGET BipedalLocomotion::TextLoggingYarpImplementation)
+ 
+   add_bipedal_locomotion_python_module(
+     NAME  TextLoggingYarpImplementation
