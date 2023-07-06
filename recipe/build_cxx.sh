@@ -35,5 +35,7 @@ cat CMakeCache.txt
 cmake --build . --config Release
 cmake --build . --config Release --target install
 
-# QPInverseKinematicsUnitTests excluded as a workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/29
-ctest --output-on-failure -E QPInverseKinematicsUnitTests  -C Release
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
+  # QPInverseKinematicsUnitTests excluded as a workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/29
+  ctest --output-on-failure -E QPInverseKinematicsUnitTests  -C Release
+fi
