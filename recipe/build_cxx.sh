@@ -5,6 +5,10 @@ if [[ "${target_platform}" == osx-* ]]; then
     CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
+  export CMAKE_ARGS="${CMAKE_ARGS} -DYARPIDL_thrift_LOCATION=$BUILD_PREFIX/bin/yarpidl_thrift -DYARPIDL_rosmsg_LOCATION=$BUILD_PREFIX/bin/yarpidl_rosmsg"
+fi
+
 rm -rf build
 mkdir -p build
 
@@ -31,5 +35,7 @@ cat CMakeCache.txt
 cmake --build . --config Release
 cmake --build . --config Release --target install
 
-# QPInverseKinematicsUnitTests excluded as a workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/29
-ctest --output-on-failure -E QPInverseKinematicsUnitTests  -C Release
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
+  # QPInverseKinematicsUnitTests excluded as a workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/29
+  ctest --output-on-failure -E QPInverseKinematicsUnitTests  -C Release
+fi
