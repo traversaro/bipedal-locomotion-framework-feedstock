@@ -1,7 +1,7 @@
 {% set name = "bipedal-locomotion-framework" %}
 {% set namecxx = "libbipedal-locomotion-framework" %}
 {% set namepython = "bipedal-locomotion-framework-python" %}
-{% set version = "0.14.0" %}
+{% set version = "0.14.1" %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c1e0b5d3df8b24aaaf5ede3bed26919ebaf9726a4b59bd7276fecf856847367d
+  sha256: 0f1907fdf976b2e86f951e8eaa47085c53917d5b5db04d9a2b37b147d62ef811
   patches:
     - 698.patch
 
