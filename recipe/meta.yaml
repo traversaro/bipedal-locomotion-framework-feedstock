@@ -12,7 +12,7 @@ source:
   sha256: 0f1907fdf976b2e86f951e8eaa47085c53917d5b5db04d9a2b37b147d62ef811
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: {{ namecxx }}
