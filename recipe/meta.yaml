@@ -12,7 +12,7 @@ source:
   sha256: 0f1907fdf976b2e86f951e8eaa47085c53917d5b5db04d9a2b37b147d62ef811
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: {{ namecxx }}
@@ -116,6 +116,8 @@ outputs:
         - idyntree
         - fmt
         - spdlog
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/37
+        - libmatio-cpp
         - xorg-libxfixes  # [linux]
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
