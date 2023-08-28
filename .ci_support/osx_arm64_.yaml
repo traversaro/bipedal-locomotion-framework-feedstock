@@ -15,7 +15,7 @@ cxx_compiler_version:
 fmt:
 - '10'
 libopencv:
-- 4.7.0
+- 4.8.0
 libosqp:
 - 0.6.3
 macos_machine:
