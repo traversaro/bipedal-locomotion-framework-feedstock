@@ -9,7 +9,7 @@ cxx_compiler:
 fmt:
 - '10'
 libopencv:
-- 4.8.0
+- 4.8.1
 libosqp:
 - 0.6.3
 pin_run_as_build:
