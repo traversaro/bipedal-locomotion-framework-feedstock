@@ -117,6 +117,8 @@ outputs:
         - spdlog
         # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/37
         - libmatio-cpp
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/42#issuecomment-1804057782
+        - casadi
         - xorg-libxfixes  # [linux]
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
