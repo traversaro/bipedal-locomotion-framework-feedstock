@@ -12,7 +12,7 @@ source:
   sha256: 129cc8f7f2d9baf144cb39d1b0927c46808387d38a4f5848a20f29507b98c9cf
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: {{ namecxx }}
@@ -55,8 +55,7 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/21#issuecomment-1460345952
-        # - pcl >1.12
+        - pcl >1.12
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
