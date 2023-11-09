@@ -121,6 +121,7 @@ outputs:
         - casadi
         - libboost
         - pugixml
+        - pcl >1.12
         - xorg-libxfixes  # [linux]
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
