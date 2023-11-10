@@ -10,9 +10,11 @@ package:
 source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 129cc8f7f2d9baf144cb39d1b0927c46808387d38a4f5848a20f29507b98c9cf
+  patches:
+    - 757.patch
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: {{ namecxx }}
@@ -55,8 +57,7 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/21#issuecomment-1460345952
-        # - pcl >1.12
+        - pcl >1.12
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
@@ -118,6 +119,11 @@ outputs:
         - spdlog
         # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/37
         - libmatio-cpp
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/42#issuecomment-1804057782
+        - casadi
+        - libboost
+        - pugixml
+        - pcl >1.12
         - xorg-libxfixes  # [linux]
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
