@@ -58,6 +58,8 @@ outputs:
         - qhull
         - libopencv
         - pcl >1.12
+        # transitive public dependency of pcl
+        - vtk-base
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
@@ -117,6 +119,7 @@ outputs:
         - idyntree
         - fmt
         - spdlog
+        - libopencv
         # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/37
         - libmatio-cpp
         # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/42#issuecomment-1804057782
