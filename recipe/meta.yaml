@@ -14,7 +14,7 @@ source:
     - 757.patch
 
 build:
-  number: 3
+  number: 4
 
 outputs:
   - name: {{ namecxx }}
