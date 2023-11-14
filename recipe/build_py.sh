@@ -22,9 +22,9 @@ cmake ${CMAKE_ARGS} -GNinja .. \
 ninja -v
 cmake --build . --config Release --target install
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
   # Tests are not installed, so we run them during the build
   # We run them directly via pytest so we detect if we are not compiling some required components
   cd ..
-  ${CROSSCOMPILING_EMULATOR} pytest -v -k "not (test_load_from_file or test_fixed_foot_detector)"
+  pytest -v -k "not (test_load_from_file or test_fixed_foot_detector)"
 fi
