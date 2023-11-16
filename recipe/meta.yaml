@@ -11,7 +11,6 @@ source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 8ba394d513eda33e8f48d1838efdd305736e3a19428111957c543c403b0c8142
   patches:
-    - 757.patch
 
 build:
   number: 0
