@@ -145,6 +145,21 @@ outputs:
         - pip
       imports:
         - bipedal_locomotion_framework
+        - bipedal_locomotion_framework.bindings.contacts
+        - bipedal_locomotion_framework.bindings.continuous_dynamical_system
+        - bipedal_locomotion_framework.bindings.conversions
+        - bipedal_locomotion_framework.bindings.floating_base_estimators
+        - bipedal_locomotion_framework.bindings.ik
+        - bipedal_locomotion_framework.bindings.math
+        - bipedal_locomotion_framework.bindings.parameters_handler
+        - bipedal_locomotion_framework.bindings.planners
+        - bipedal_locomotion_framework.bindings.reduced_model_controllers
+        - bipedal_locomotion_framework.bindings.robot_interface
+        - bipedal_locomotion_framework.bindings.simplified_model_controllers
+        - bipedal_locomotion_framework.bindings.system
+        - bipedal_locomotion_framework.bindings.text_logging
+        - bipedal_locomotion_framework.bindings.tsid
+        - bipedal_locomotion_framework.bindings.yarp_utilities
 
   - name: {{ name }}
     build:
