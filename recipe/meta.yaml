@@ -124,7 +124,7 @@ outputs:
         - libmatio-cpp
         # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/42#issuecomment-1804057782
         - casadi
-        - libboost
+        - libboost-devel
         - pugixml
         - pcl >1.12
         - xorg-libxfixes  # [linux]
