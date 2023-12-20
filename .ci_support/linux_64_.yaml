@@ -16,6 +16,10 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 fmt:
 - '10'
+libboost_devel:
+- '1.82'
+libmatio_cpp:
+- 0.2.3
 libopencv:
 - 4.8.1
 libosqp:
