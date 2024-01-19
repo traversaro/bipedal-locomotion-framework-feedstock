@@ -165,6 +165,7 @@ outputs:
         - bipedal_locomotion_framework.bindings.floating_base_estimators
         - bipedal_locomotion_framework.bindings.ik
         - bipedal_locomotion_framework.bindings.math
+        - bipedal_locomotion_framework.bindings.ml
         - bipedal_locomotion_framework.bindings.parameters_handler
         - bipedal_locomotion_framework.bindings.planners
         - bipedal_locomotion_framework.bindings.reduced_model_controllers
