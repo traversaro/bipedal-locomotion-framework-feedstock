@@ -13,7 +13,7 @@ source:
   patches:
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and py==38]
 
 outputs:
@@ -58,6 +58,7 @@ outputs:
         - qhull
         - libopencv
         - pcl >1.12
+        - onnxruntime-cpp
         # transitive public dependency of pcl
         - vtk-base
         - liblie-group-controllers
