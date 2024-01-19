@@ -58,13 +58,15 @@ outputs:
         - qhull
         - libopencv
         - pcl >1.12
-        - onnxruntime-cpp
+        - onnxruntime-cpp 0.
         # transitive public dependency of pcl
         - vtk-base
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
         - xorg-libxfixes  # [linux]
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/52#issuecomment-1900211324
+        - onnxruntime-cpp 1.16.3
       run:
         # manif and eigen are mentioned in the headers so needed when building
         # against libbipedal-locomotion-framework
@@ -72,6 +74,8 @@ outputs:
         - eigen
         - liblie-group-controllers
         - tomlplusplus
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/52#issuecomment-1900211324
+        - onnxruntime-cpp 1.16.3
 
     test:
       commands:
