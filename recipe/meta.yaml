@@ -58,7 +58,8 @@ outputs:
         - qhull
         - libopencv
         - pcl >1.12
-        - onnxruntime-cpp 0.
+        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/52#issuecomment-1900211324
+        - onnxruntime-cpp 1.16.3
         # transitive public dependency of pcl
         - vtk-base
         - liblie-group-controllers
