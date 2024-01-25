@@ -19,7 +19,7 @@ libboost_devel:
 libmatio_cpp:
 - 0.2.3
 libopencv:
-- 4.8.1
+- 4.9.0
 libosqp:
 - 0.6.3
 macos_machine:
