@@ -14,7 +14,6 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and py==38]
 
 outputs:
   - name: {{ namecxx }}
@@ -58,8 +57,7 @@ outputs:
         - qhull
         - libopencv
         - pcl >1.12
-        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/52#issuecomment-1900211324
-        - onnxruntime-cpp 1.16.3
+        - onnxruntime-cpp
         # transitive public dependency of pcl
         - vtk-base
         - liblie-group-controllers
@@ -73,8 +71,7 @@ outputs:
         - eigen
         - liblie-group-controllers
         - tomlplusplus
-        # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/52#issuecomment-1900211324
-        - onnxruntime-cpp 1.16.3
+
 
     test:
       commands:
@@ -120,8 +117,7 @@ outputs:
         - liblie-group-controllers
         - libyarp
         - tomlplusplus
-        # Temporary workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/53
-        - idyntree 10.2.0
+        - idyntree
         - fmt
         - spdlog
         - libopencv
