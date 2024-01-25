@@ -1,7 +1,7 @@
 {% set name = "bipedal-locomotion-framework" %}
 {% set namecxx = "libbipedal-locomotion-framework" %}
 {% set namepython = "bipedal-locomotion-framework-python" %}
-{% set version = "0.17.0" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name }}
@@ -9,12 +9,11 @@ package:
 
 source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5c19734f6db4b29a4595592ed9365ed10e4ee68dc2a3b8eadde9880821581df1
+  sha256: 62de0cfd28c328098bc472a05fe6766f8290f96d0ba20a9ed53f17ba49ef8d8e
   patches:
 
 build:
   number: 0
-  skip: true  # [win and py==38]
 
 outputs:
   - name: {{ namecxx }}
@@ -58,6 +57,7 @@ outputs:
         - qhull
         - libopencv
         - pcl >1.12
+        - onnxruntime-cpp
         # transitive public dependency of pcl
         - vtk-base
         - liblie-group-controllers
@@ -71,6 +71,7 @@ outputs:
         - eigen
         - liblie-group-controllers
         - tomlplusplus
+
 
     test:
       commands:
@@ -164,6 +165,7 @@ outputs:
         - bipedal_locomotion_framework.bindings.floating_base_estimators
         - bipedal_locomotion_framework.bindings.ik
         - bipedal_locomotion_framework.bindings.math
+        - bipedal_locomotion_framework.bindings.ml
         - bipedal_locomotion_framework.bindings.parameters_handler
         - bipedal_locomotion_framework.bindings.planners
         - bipedal_locomotion_framework.bindings.reduced_model_controllers
