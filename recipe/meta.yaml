@@ -101,7 +101,6 @@ outputs:
         - pybind11-abi
         - ninja
         - cmake
-        - idyntree
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
@@ -121,7 +120,8 @@ outputs:
         - liblie-group-controllers
         - libyarp
         - tomlplusplus
-        - idyntree
+        # Temporary workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/53
+        - idyntree 10.2.0
         - fmt
         - spdlog
         - libopencv
