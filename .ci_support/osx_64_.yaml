@@ -4,6 +4,10 @@ c_compiler:
 - clang
 c_compiler_version:
 - '16'
+c_stdlib:
+- macosx_deployment_target
+c_stdlib_version:
+- '10.9'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -14,6 +18,8 @@ cxx_compiler_version:
 - '16'
 fmt:
 - '10'
+idyntree:
+- '11'
 libboost_devel:
 - '1.82'
 libmatio_cpp:
@@ -22,6 +28,8 @@ libopencv:
 - 4.9.0
 libosqp:
 - 0.6.3
+libyarp:
+- 3.9.0
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:
