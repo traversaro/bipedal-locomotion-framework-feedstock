@@ -1,5 +1,5 @@
-About bipedal-locomotion-framework-feedstock
-============================================
+About bipedal-locomotion-framework-split-feedstock
+==================================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/blob/main/LICENSE.txt)
 
@@ -78,10 +78,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-bipedal--locomotion--framework--python-green.svg)](https://anaconda.org/conda-forge/bipedal-locomotion-framework-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/bipedal-locomotion-framework-python.svg)](https://anaconda.org/conda-forge/bipedal-locomotion-framework-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/bipedal-locomotion-framework-python.svg)](https://anaconda.org/conda-forge/bipedal-locomotion-framework-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/bipedal-locomotion-framework-python.svg)](https://anaconda.org/conda-forge/bipedal-locomotion-framework-python) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libbipedal--locomotion--framework-green.svg)](https://anaconda.org/conda-forge/libbipedal-locomotion-framework) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libbipedal-locomotion-framework.svg)](https://anaconda.org/conda-forge/libbipedal-locomotion-framework) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libbipedal-locomotion-framework.svg)](https://anaconda.org/conda-forge/libbipedal-locomotion-framework) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libbipedal-locomotion-framework.svg)](https://anaconda.org/conda-forge/libbipedal-locomotion-framework) |
 
-Installing bipedal-locomotion-framework
-=======================================
+Installing bipedal-locomotion-framework-split
+=============================================
 
-Installing `bipedal-locomotion-framework` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `bipedal-locomotion-framework-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -167,17 +167,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating bipedal-locomotion-framework-feedstock
-===============================================
+Updating bipedal-locomotion-framework-split-feedstock
+=====================================================
 
-If you would like to improve the bipedal-locomotion-framework recipe or build a new
+If you would like to improve the bipedal-locomotion-framework-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/bipedal-locomotion-framework-feedstock are
+Note that all branches in the conda-forge/bipedal-locomotion-framework-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
