@@ -1,10 +1,12 @@
+# Note: we use this variable everywhere except in outputs names as jinja variables in output names are not supported
+# by migrators, see https://github.com/conda-forge/librobometry-feedstock/pull/20#issuecomment-2041618340
 {% set name = "bipedal-locomotion-framework" %}
 {% set namecxx = "libbipedal-locomotion-framework" %}
 {% set namepython = "bipedal-locomotion-framework-python" %}
 {% set version = "0.18.0" %}
 
 package:
-  name: {{ name }}
+  name: {{ name }}-split
   version: {{ version }}
 
 source:
@@ -13,10 +15,11 @@ source:
   patches:
 
 build:
-  number: 5
+  number: 6
 
 outputs:
-  - name: {{ namecxx }}
+  # {{ namecxx }}
+  - name: "libbipedal-locomotion-framework"
     script: build_cxx.sh  # [unix]
     script: bld_cxx.bat  # [win]
     build:
@@ -83,7 +86,8 @@ outputs:
         - if not exist %PREFIX%\\Library\\bin\\BipedalLocomotionFrameworkSystem.dll exit 1  # [win]
         - if not exist %PREFIX%\\Library\\CMake\\BipedalLocomotionFrameworkConfig.cmake exit 1  # [win]
 
-  - name: {{ namepython }}
+  # {{ namepython }}
+  - name: "bipedal-locomotion-framework-python"
     script: build_py.sh  # [unix]
     script: bld_py.bat  # [win]
     build:
@@ -149,7 +153,8 @@ outputs:
       imports:
         - bipedal_locomotion_framework
 
-  - name: {{ name }}
+  # {{ name }}
+  - name: "bipedal-locomotion-framework"
     build:
       run_exports:
         - {{ pin_subpackage(namecxx, max_pin='x.x.x') }}
