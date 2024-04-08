@@ -6,7 +6,7 @@
 {% set version = "0.18.0" %}
 
 package:
-  name: {{ name }}-split
+  name: bipedal-locomotion-framework-split
   version: {{ version }}
 
 source:
@@ -19,7 +19,7 @@ build:
 
 outputs:
   # {{ namecxx }}
-  - name: "libbipedal-locomotion-framework"
+  - name: libbipedal-locomotion-framework
     script: build_cxx.sh  # [unix]
     script: bld_cxx.bat  # [win]
     build:
@@ -87,7 +87,7 @@ outputs:
         - if not exist %PREFIX%\\Library\\CMake\\BipedalLocomotionFrameworkConfig.cmake exit 1  # [win]
 
   # {{ namepython }}
-  - name: "bipedal-locomotion-framework-python"
+  - name: bipedal-locomotion-framework-python
     script: build_py.sh  # [unix]
     script: bld_py.bat  # [win]
     build:
@@ -154,7 +154,7 @@ outputs:
         - bipedal_locomotion_framework
 
   # {{ name }}
-  - name: "bipedal-locomotion-framework"
+  - name: bipedal-locomotion-framework
     build:
       run_exports:
         - {{ pin_subpackage(namecxx, max_pin='x.x.x') }}
