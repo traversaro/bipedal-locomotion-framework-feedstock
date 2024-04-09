@@ -15,7 +15,7 @@ source:
   patches:
 
 build:
-  number: 6
+  number: 7
 
 outputs:
   # {{ namecxx }}
@@ -28,6 +28,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - cmake
         - pkg-config
@@ -97,6 +98,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - pybind11
         - pybind11-abi
