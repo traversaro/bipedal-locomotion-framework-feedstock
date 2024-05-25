@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
+MACOSX_SDK_VERSION:
+- '11.0'
 c_compiler:
 - clang
 c_compiler_version:
@@ -23,7 +25,7 @@ idyntree:
 libboost_devel:
 - '1.84'
 libmatio_cpp:
-- 0.2.4
+- 0.2.5
 libopencv:
 - 4.9.0
 libosqp:
