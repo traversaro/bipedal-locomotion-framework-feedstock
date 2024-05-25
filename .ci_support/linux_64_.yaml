@@ -25,7 +25,7 @@ idyntree:
 libboost_devel:
 - '1.84'
 libmatio_cpp:
-- 0.2.4
+- 0.2.5
 libopencv:
 - 4.9.0
 libosqp:
