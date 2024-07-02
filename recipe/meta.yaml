@@ -15,7 +15,7 @@ source:
   patches:
 
 build:
-  number: 11
+  number: 12
 
 outputs:
   # {{ namecxx }}
@@ -60,7 +60,7 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        - pcl >1.12
+        - pcl 1.14.0
         - onnxruntime-cpp
         # transitive public dependency of pcl
         - vtk-base
@@ -134,16 +134,16 @@ outputs:
         - casadi
         - libboost-devel
         - pugixml
-        - pcl >1.12
+        - pcl 1.14.0
         - xorg-libxfixes  # [linux]
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
         - pytest # Requested just for tests
         - manifpy # Requested just for tests
+        - numpy
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
-        - numpy
         - manifpy
         - idyntree
     test:
