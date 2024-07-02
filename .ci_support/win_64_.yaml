@@ -22,6 +22,12 @@ libosqp:
 - 0.6.3
 libyarp:
 - 3.9.0
+numpy:
+- '1.22'
+- '1.23'
+- '1.26'
+- '1.22'
+- '1.22'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -42,3 +48,6 @@ spdlog:
 - '1.13'
 target_platform:
 - win-64
+zip_keys:
+- - python
+  - numpy
