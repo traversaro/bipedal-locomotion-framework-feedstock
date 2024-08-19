@@ -41,6 +41,8 @@ outputs:
         - {{ cdt('libxext') }}     # [linux]
         # YARP idl tools are used in this recipe
         - libyarp  # [build_platform != target_platform]
+        # PCL requires Qt's tools
+        - qt6-main  # [build_platform != target_platform and not ppc64le]
       host:
         - eigen
         - idyntree
