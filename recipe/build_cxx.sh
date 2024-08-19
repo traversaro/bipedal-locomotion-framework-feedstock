@@ -9,6 +9,11 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export CMAKE_ARGS="${CMAKE_ARGS} -DYARPIDL_thrift_LOCATION=$BUILD_PREFIX/bin/yarpidl_thrift -DYARPIDL_rosmsg_LOCATION=$BUILD_PREFIX/bin/yarpidl_rosmsg"
 fi
 
+# Workaround for https://github.com/conda-forge/qt-main-feedstock/issues/273
+if [[ "$build_platform" != "$target_platform" ]]; then
+    export QT_HOST_PATH="$BUILD_PREFIX"
+fi
+
 rm -rf build
 mkdir -p build
 
