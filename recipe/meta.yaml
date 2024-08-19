@@ -119,6 +119,8 @@ outputs:
         - {{ cdt('libxdamage') }}  # [linux]
         - {{ cdt('libxxf86vm') }}  # [linux]
         - {{ cdt('libxext') }}     # [linux]
+        # PCL requires Qt's tools
+        - qt6-main  # [build_platform != target_platform and not ppc64le]
       host:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
