@@ -79,8 +79,6 @@ outputs:
         - eigen
         - liblie-group-controllers
         - tomlplusplus
-        # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
-        - vtk-base * qt*  # [not win]
 
     test:
       commands:
@@ -148,6 +146,8 @@ outputs:
         - pytest # Requested just for tests
         - manifpy # Requested just for tests
         - numpy
+        # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
+        - vtk-base * qt*  # [not win]
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
