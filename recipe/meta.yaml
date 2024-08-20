@@ -15,7 +15,7 @@ source:
   patches:
 
 build:
-  number: 14
+  number: 15
 
 outputs:
   # {{ namecxx }}
@@ -41,6 +41,8 @@ outputs:
         - {{ cdt('libxext') }}     # [linux]
         # YARP idl tools are used in this recipe
         - libyarp  # [build_platform != target_platform]
+        # PCL requires Qt's tools
+        - qt6-main  # [build_platform != target_platform and not ppc64le]
       host:
         - eigen
         - idyntree
@@ -60,7 +62,7 @@ outputs:
         - casadi
         - qhull
         - libopencv
-        - pcl 1.14.0
+        - pcl
         - onnxruntime-cpp
         # transitive public dependency of pcl
         - vtk-base
@@ -68,6 +70,8 @@ outputs:
         - libunicycle-footstep-planner
         - librealsense  # [not win]
         - xorg-libxfixes  # [linux]
+        # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
+        - vtk-base * qt*  # [not win]
       run:
         # manif and eigen are mentioned in the headers so needed when building
         # against libbipedal-locomotion-framework
@@ -75,7 +79,6 @@ outputs:
         - eigen
         - liblie-group-controllers
         - tomlplusplus
-
 
     test:
       commands:
@@ -114,6 +117,8 @@ outputs:
         - {{ cdt('libxdamage') }}  # [linux]
         - {{ cdt('libxxf86vm') }}  # [linux]
         - {{ cdt('libxext') }}     # [linux]
+        # PCL requires Qt's tools
+        - qt6-main  # [build_platform != target_platform and not ppc64le]
       host:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
@@ -134,13 +139,15 @@ outputs:
         - casadi
         - libboost-devel
         - pugixml
-        - pcl 1.14.0
+        - pcl
         - xorg-libxfixes  # [linux]
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
         - pytest # Requested just for tests
         - manifpy # Requested just for tests
         - numpy
+        # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
+        - vtk-base * qt*  # [not win]
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
