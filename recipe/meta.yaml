@@ -15,7 +15,7 @@ source:
   patches:
 
 build:
-  number: 15
+  number: 16
 
 outputs:
   # {{ namecxx }}
@@ -25,6 +25,9 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage(namecxx, max_pin='x.x.x') }}
+      # catch2 is used just for tests, we do not actually link the C++ library
+      ignore_run_exports:
+        - catch2
     requirements:
       build:
         - {{ compiler('c') }}
@@ -64,6 +67,8 @@ outputs:
         - libopencv
         - pcl
         - onnxruntime-cpp
+        # Only required for testing
+        - catch2
         # transitive public dependency of pcl
         - vtk-base
         - liblie-group-controllers
@@ -122,7 +127,6 @@ outputs:
       host:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
-        - pip
         # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
         - pybind11 <2.12.0
         - pybind11-abi
