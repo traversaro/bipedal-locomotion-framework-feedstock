@@ -28,6 +28,8 @@ ninja -v
 cmake --build . --config Release --target install
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+  # Workaround for https://github.com/conda-forge/mumps-feedstock/issues/125
+  export OMP_NUM_THREADS=1
   # Tests are not installed, so we run them during the build
   # We run them directly via pytest so we detect if we are not compiling some required components
   cd ..
