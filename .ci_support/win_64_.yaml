@@ -13,7 +13,7 @@ fmt:
 idyntree:
 - '12'
 libboost_devel:
-- '1.84'
+- '1.86'
 libmatio_cpp:
 - 0.2.5
 libopencv:
