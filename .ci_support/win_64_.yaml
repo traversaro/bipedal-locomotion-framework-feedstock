@@ -11,7 +11,7 @@ cxx_compiler:
 fmt:
 - '11'
 idyntree:
-- '12'
+- '13'
 libboost_devel:
 - '1.86'
 libmatio_cpp:
