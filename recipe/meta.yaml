@@ -36,12 +36,6 @@ outputs:
         - cmake==3.29.0
         - pkg-config
         - ninja
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libselinux') }}  # [linux]
-        - {{ cdt('libxdamage') }}  # [linux]
-        - {{ cdt('libxxf86vm') }}  # [linux]
-        - {{ cdt('libxext') }}     # [linux]
         # YARP idl tools are used in this recipe
         - libyarp  # [build_platform != target_platform]
         # PCL requires Qt's tools
@@ -67,6 +61,7 @@ outputs:
         - libopencv
         - pcl
         - onnxruntime-cpp
+        - libgl-devel  # [linux]
         # Only required for testing
         - catch2
         # transitive public dependency of pcl
@@ -116,12 +111,6 @@ outputs:
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
         - pybind11-abi                           # [build_platform != target_platform]
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libselinux') }}  # [linux]
-        - {{ cdt('libxdamage') }}  # [linux]
-        - {{ cdt('libxxf86vm') }}  # [linux]
-        - {{ cdt('libxext') }}     # [linux]
         # PCL requires Qt's tools
         - qt6-main  # [build_platform != target_platform and not ppc64le]
       host:
@@ -144,6 +133,7 @@ outputs:
         - libboost-devel
         - pugixml
         - pcl
+        - libgl-devel  # [linux]
         - xorg-libxfixes  # [linux]
         - icub-models # Requested just for tests
         - scipy # Requested just for tests
