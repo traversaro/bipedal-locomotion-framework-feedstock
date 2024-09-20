@@ -13,6 +13,7 @@ source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 0366fb751aaac0ec0a2cb8ef6d56af4527b822b80d104d747f9c1c1f77718282
   patches:
+    - 891.patch
 
 build:
   number: 3
@@ -61,6 +62,7 @@ outputs:
         - libopencv
         - pcl
         - onnxruntime-cpp
+        - tiny-process-library
         - libgl-devel  # [linux]
         # Only required for testing
         - catch2
