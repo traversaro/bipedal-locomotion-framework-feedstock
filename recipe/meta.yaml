@@ -103,7 +103,7 @@ outputs:
       ignore_run_exports:
         - icub-models
       # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
-      skip: true              # [aarch64]
+      skip: True              # [aarch64]
     requirements:
       build:
         - {{ compiler('c') }}
@@ -165,31 +165,32 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage(namecxx, max_pin='x.x.x') }}
+      # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
+      skip: True              # [aarch64]
     requirements:
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
         # Workaround for       # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
-        - {{ pin_subpackage(namepython, max_pin='x.x.x') }}  # [not aarch64]
+        - {{ pin_subpackage(namepython, max_pin='x.x.x') }}
     test:
-      imports:  # [not aarch64]
-        - bipedal_locomotion_framework  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.contacts  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.continuous_dynamical_system  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.conversions  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.floating_base_estimators  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.ik  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.math  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.ml  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.parameters_handler  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.planners  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.reduced_model_controllers  # [not aarch64]
+      imports:
+        - bipedal_locomotion_framework
+        - bipedal_locomotion_framework.bindings.contacts
+        - bipedal_locomotion_framework.bindings.continuous_dynamical_system
+        - bipedal_locomotion_framework.bindings.conversions
+        - bipedal_locomotion_framework.bindings.floating_base_estimators
+        - bipedal_locomotion_framework.bindings.ik
+        - bipedal_locomotion_framework.bindings.math
+        - bipedal_locomotion_framework.bindings.ml
+        - bipedal_locomotion_framework.bindings.parameters_handler
+        - bipedal_locomotion_framework.bindings.planners
+        - bipedal_locomotion_framework.bindings.reduced_model_controllers
         - bipedal_locomotion_framework.bindings.robot_interface
-        - bipedal_locomotion_framework.bindings.simplified_model_controllers  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.system  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.text_logging  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.tsid  # [not aarch64]
-        - bipedal_locomotion_framework.bindings.yarp_utilities  # [not aarch64]
-
+        - bipedal_locomotion_framework.bindings.simplified_model_controllers
+        - bipedal_locomotion_framework.bindings.system
+        - bipedal_locomotion_framework.bindings.text_logging
+        - bipedal_locomotion_framework.bindings.tsid
+        - bipedal_locomotion_framework.bindings.yarp_utilities
 
 about:
   home: https://github.com/ami-iit/bipedal-locomotion-framework
