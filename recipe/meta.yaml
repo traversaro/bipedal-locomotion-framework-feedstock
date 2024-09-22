@@ -16,7 +16,7 @@ source:
     - 891.patch
 
 build:
-  number: 3
+  number: 4
 
 outputs:
   # {{ namecxx }}
@@ -102,8 +102,6 @@ outputs:
       # icub-models is used just for tests, we do not actually link the C++ library
       ignore_run_exports:
         - icub-models
-      # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
-      skip: True              # [aarch64]
     requirements:
       build:
         - {{ compiler('c') }}
@@ -165,12 +163,9 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage(namecxx, max_pin='x.x.x') }}
-      # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
-      skip: True              # [aarch64]
     requirements:
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
-        # Workaround for       # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
         - {{ pin_subpackage(namepython, max_pin='x.x.x') }}
     test:
       imports:
