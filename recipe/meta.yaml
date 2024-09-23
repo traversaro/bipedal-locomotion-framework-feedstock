@@ -73,7 +73,7 @@ outputs:
         - librealsense  # [not win]
         - xorg-libxfixes  # [linux]
         # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
-        - vtk-base * qt*_207  # [not win]
+        - vtk-base * qt*  # [not win]
       run:
         # manif and eigen are mentioned in the headers so needed when building
         # against libbipedal-locomotion-framework
