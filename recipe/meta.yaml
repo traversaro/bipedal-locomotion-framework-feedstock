@@ -16,7 +16,7 @@ source:
     - 891.patch
 
 build:
-  number: 3
+  number: 4
 
 outputs:
   # {{ namecxx }}
@@ -34,7 +34,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
-        - cmake==3.29.0
+        - cmake
         - pkg-config
         - ninja
         # YARP idl tools are used in this recipe
@@ -83,7 +83,6 @@ outputs:
         - tomlplusplus
         # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
         - vtk-base * qt*  # [not win]
-
     test:
       commands:
         - test -f ${PREFIX}/include/BipedalLocomotion/System/Advanceable.h  # [unix]
@@ -102,8 +101,6 @@ outputs:
       # icub-models is used just for tests, we do not actually link the C++ library
       ignore_run_exports:
         - icub-models
-      # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
-      skip: True              # [aarch64]
     requirements:
       build:
         - {{ compiler('c') }}
@@ -112,7 +109,7 @@ outputs:
         - pybind11
         - pybind11-abi
         - ninja
-        - cmake==3.29.0
+        - cmake
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
@@ -165,12 +162,9 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage(namecxx, max_pin='x.x.x') }}
-      # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
-      skip: True              # [aarch64]
     requirements:
       run:
         - {{ pin_subpackage(namecxx, exact=True) }}
-        # Workaround for       # Workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/85#issuecomment-2364616366
         - {{ pin_subpackage(namepython, max_pin='x.x.x') }}
     test:
       imports:

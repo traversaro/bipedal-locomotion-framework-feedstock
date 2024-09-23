@@ -1,4 +1,0 @@
-# Workaround for https://github.com/conda-forge/conda-forge-pinning-feedstock/issues/6306
-# Remove once vtk-base is pinned
-vtk_base:
-  - "9.3.0"
