@@ -21,7 +21,7 @@ libopencv:
 libosqp:
 - 0.6.3
 libyarp:
-- 3.9.0
+- 3.10.1
 numpy:
 - '1.22'
 pcl:
