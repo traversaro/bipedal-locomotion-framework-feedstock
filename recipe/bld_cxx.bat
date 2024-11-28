@@ -18,6 +18,7 @@ cmake -G "Ninja" ^
     -DFRAMEWORK_USE_tomlplusplus:BOOL=ON ^
     -DFRAMEWORK_USE_PCL:BOOL=ON ^
     -DFRAMEWORK_COMPILE_PYTHON_BINDINGS:BOOL=OFF ^
+    -DFRAMEWORK_COMPILE_Ros1Publisher:BOOL=OFF ^
     -DUSE_SYSTEM_Catch2:BOOL=ON ^
     -DUSE_SYSTEM_tiny-process-library:BOOL=ON ^
     %SRC_DIR%
