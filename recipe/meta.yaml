@@ -15,6 +15,7 @@ source:
   patches:
     - 891.patch
     - 898.patch
+    - 914.patch
 
 build:
   number: 6
