@@ -15,9 +15,10 @@ source:
   patches:
     - 891.patch
     - 898.patch
+    - 914.patch
 
 build:
-  number: 5
+  number: 6
 
 outputs:
   # {{ namecxx }}
