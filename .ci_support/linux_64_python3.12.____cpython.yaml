@@ -30,6 +30,8 @@ libopencv:
 - 4.10.0
 libosqp:
 - 0.6.3
+librealsense:
+- '2.54'
 libyarp:
 - 3.10.1
 numpy:
