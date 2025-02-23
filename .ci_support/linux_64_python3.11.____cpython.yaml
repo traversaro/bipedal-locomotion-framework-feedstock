@@ -37,13 +37,13 @@ libyarp:
 numpy:
 - '1.23'
 pcl:
-- 1.14.1
+- 1.15.0
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 pugixml:
-- '1.14'
+- '1.15'
 pybind11_abi:
 - '4'
 python:
