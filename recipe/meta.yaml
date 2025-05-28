@@ -66,13 +66,11 @@ outputs:
         # Only required for testing
         - catch2
         # transitive public dependency of pcl
-        - vtk-base
+        - vtk
         - liblie-group-controllers
         - libunicycle-footstep-planner
         - librealsense  # [not win]
         - xorg-libxfixes  # [linux]
-        # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
-        - vtk-base * qt*  # [not win]
       run:
         # manif and eigen are mentioned in the headers so needed when building
         # against libbipedal-locomotion-framework
@@ -80,8 +78,6 @@ outputs:
         - eigen
         - liblie-group-controllers
         - tomlplusplus
-        # Workaround for https://github.com/conda-forge/pcl-feedstock/pull/68
-        - vtk-base * qt*  # [not win]
     test:
       commands:
         - test -f ${PREFIX}/include/BipedalLocomotion/System/Advanceable.h  # [unix]
