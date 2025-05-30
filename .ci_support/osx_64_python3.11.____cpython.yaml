@@ -31,7 +31,7 @@ libopencv:
 libosqp:
 - 0.6.3
 librealsense:
-- '2.54'
+- '2.55'
 libyarp:
 - 3.11.2
 macos_machine:
@@ -56,7 +56,7 @@ spdlog:
 - '1.15'
 target_platform:
 - osx-64
-vtk_base:
+vtk:
 - 9.4.2
 zip_keys:
 - - c_compiler_version
