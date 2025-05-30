@@ -3,7 +3,7 @@
 {% set name = "bipedal-locomotion-framework" %}
 {% set namecxx = "libbipedal-locomotion-framework" %}
 {% set namepython = "bipedal-locomotion-framework-python" %}
-{% set version = "0.21.0" %}
+{% set version = "0.21.1" %}
 
 package:
   name: bipedal-locomotion-framework-split
@@ -11,11 +11,11 @@ package:
 
 source:
   url: https://github.com/ami-iit/bipedal-locomotion-framework/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4d5571390cefc39dec344eed79e4761a0749e1da2344cda6c05a95a1e8517b42
+  sha256: 868566e9f1b450e40a372af2a191009cfc04b72a91d2e3a22b852a9b7852b6c4
 
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   # {{ namecxx }}
