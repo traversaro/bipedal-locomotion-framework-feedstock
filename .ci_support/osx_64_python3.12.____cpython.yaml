@@ -29,7 +29,7 @@ libmatio_cpp:
 libopencv:
 - 4.11.0
 libosqp:
-- 0.6.3
+- 1.0.0
 librealsense:
 - '2.55'
 libyarp:
