@@ -1,0 +1,35 @@
+From d3c7396f478be2967431c9704221b78e66d3af00 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Tue, 3 Jun 2025 21:44:46 +0200
+Subject: [PATCH] Remove unused types.h include and fix compilation with osqp
+ 1.0.0
+
+---
+ src/IK/src/JointLimitsTask.cpp         | 1 -
+ src/IK/src/JointVelocityLimitsTask.cpp | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/src/IK/src/JointLimitsTask.cpp b/src/IK/src/JointLimitsTask.cpp
+index 71316e24ff..917f7370b1 100644
+--- a/src/IK/src/JointLimitsTask.cpp
++++ b/src/IK/src/JointLimitsTask.cpp
+@@ -6,7 +6,6 @@
+  */
+ 
+ #include <chrono>
+-#include <types.h>
+ #include <vector>
+ 
+ #include <OsqpEigen/Constants.hpp>
+diff --git a/src/IK/src/JointVelocityLimitsTask.cpp b/src/IK/src/JointVelocityLimitsTask.cpp
+index 253d67e0be..e0e488d7e4 100644
+--- a/src/IK/src/JointVelocityLimitsTask.cpp
++++ b/src/IK/src/JointVelocityLimitsTask.cpp
+@@ -6,7 +6,6 @@
+  */
+ 
+ #include <chrono>
+-#include <types.h>
+ #include <vector>
+ 
+ #include <OsqpEigen/Constants.hpp>
