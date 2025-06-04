@@ -1,0 +1,60 @@
+From 6dc66ac9568896d794580e1d4382f03e63b02ebe Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Wed, 4 Jun 2025 10:11:20 +0200
+Subject: [PATCH 1/2] Use fixed seed for QP-IK Distance and Gravity test
+
+---
+ src/IK/tests/QPInverseKinematicsTest.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/IK/tests/QPInverseKinematicsTest.cpp b/src/IK/tests/QPInverseKinematicsTest.cpp
+index db755c55d2..eef3278039 100644
+--- a/src/IK/tests/QPInverseKinematicsTest.cpp
++++ b/src/IK/tests/QPInverseKinematicsTest.cpp
+@@ -780,6 +780,10 @@ TEST_CASE("QP-IK [With builder]")
+ 
+ TEST_CASE("QP-IK [Distance and Gravity tasks]")
+ {
++    // iDynTree test helpers are used in customGetRandomModelWithNoPrismaticJoints, so as
++    // iDynTree uses the C RNG facilities, so we use a reproducible seed for the test
++    srand(42);
++
+     auto kinDyn = std::make_shared<iDynTree::KinDynComputations>();
+     auto parameterHandler = createParameterHandler();
+ 
+
+From ba6c71a911ff3e42ec91c0624fdefd8ec424545d Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Tue, 3 Jun 2025 21:44:46 +0200
+Subject: [PATCH 2/2] Remove unused types.h include and fix compilation with
+ osqp 1.0.0
+
+---
+ src/IK/src/JointLimitsTask.cpp         | 1 -
+ src/IK/src/JointVelocityLimitsTask.cpp | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/src/IK/src/JointLimitsTask.cpp b/src/IK/src/JointLimitsTask.cpp
+index 71316e24ff..917f7370b1 100644
+--- a/src/IK/src/JointLimitsTask.cpp
++++ b/src/IK/src/JointLimitsTask.cpp
+@@ -6,7 +6,6 @@
+  */
+ 
+ #include <chrono>
+-#include <types.h>
+ #include <vector>
+ 
+ #include <OsqpEigen/Constants.hpp>
+diff --git a/src/IK/src/JointVelocityLimitsTask.cpp b/src/IK/src/JointVelocityLimitsTask.cpp
+index 253d67e0be..e0e488d7e4 100644
+--- a/src/IK/src/JointVelocityLimitsTask.cpp
++++ b/src/IK/src/JointVelocityLimitsTask.cpp
+@@ -6,7 +6,6 @@
+  */
+ 
+ #include <chrono>
+-#include <types.h>
+ #include <vector>
+ 
+ #include <OsqpEigen/Constants.hpp>
