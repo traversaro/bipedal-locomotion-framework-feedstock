@@ -45,7 +45,6 @@ cmake --build . --config Release
 cmake --build . --config Release --target install
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
-  # QPInverseKinematicsUnitTests excluded as a workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/issues/29
-  # excluded as a workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/102#issuecomment-2645529914
-  ctest --output-on-failure -E "QPInverseKinematicsUnitTests|YarpRobotLoggerDeviceUnitTests"  -C Release
+  # YarpRobotLoggerDeviceUnitTests excluded as a workaround for https://github.com/conda-forge/bipedal-locomotion-framework-feedstock/pull/102#issuecomment-2645529914
+  ctest --output-on-failure -E "YarpRobotLoggerDeviceUnitTests"  -C Release
 fi
