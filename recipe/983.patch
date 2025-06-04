@@ -17,7 +17,7 @@ index db755c55d2..eef3278039 100644
  {
 +    // iDynTree test helpers are used in customGetRandomModelWithNoPrismaticJoints, so as
 +    // iDynTree uses the C RNG facilities, so we use a reproducible seed for the test
-+    srand(0);
++    srand(42);
 +
      auto kinDyn = std::make_shared<iDynTree::KinDynComputations>();
      auto parameterHandler = createParameterHandler();
