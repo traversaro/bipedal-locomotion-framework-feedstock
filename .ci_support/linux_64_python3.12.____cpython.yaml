@@ -33,7 +33,7 @@ libosqp:
 librealsense:
 - '2.55'
 libyarp:
-- 3.11.2
+- 3.12.0
 numpy:
 - '1.26'
 pcl:
