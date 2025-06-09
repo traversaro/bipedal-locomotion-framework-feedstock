@@ -35,7 +35,7 @@ librealsense:
 libyarp:
 - 3.12.0
 numpy:
-- '1.26'
+- '2'
 pcl:
 - 1.15.0
 pin_run_as_build:
@@ -59,5 +59,3 @@ vtk:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - python
-  - numpy
