@@ -23,7 +23,7 @@ libosqp:
 libyarp:
 - 3.12.0
 numpy:
-- '2'
+- '1.26'
 pcl:
 - 1.15.0
 pin_run_as_build:
