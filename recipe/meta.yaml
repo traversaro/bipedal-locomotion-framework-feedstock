@@ -14,7 +14,7 @@ source:
   sha256: 80644dae4a4652f7077efade7c675882b8440f665476555338a793b86ccd107f
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   # {{ namecxx }}
@@ -113,8 +113,7 @@ outputs:
       host:
         - {{ pin_subpackage(namecxx, exact=True) }}
         - python
-        # Workaround for https://github.com/conda-forge/pybind11-feedstock/pull/94#issuecomment-2033804227
-        - pybind11 <2.12.0
+        - pybind11
         - pybind11-abi
         - liblie-group-controllers
         - libyarp
